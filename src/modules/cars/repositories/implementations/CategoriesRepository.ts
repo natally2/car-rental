@@ -1,5 +1,5 @@
-import { Category } from "../model/Category";
-import { ICategoriesRepository, ICreateCategoryDTO,  } from "./ICategoriesRepository";
+import { Category } from "../../model/Category";
+import { ICategoriesRepository, ICreateCategoryDTO,  } from "../ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
     private categories: Category[];
@@ -17,7 +17,7 @@ class CategoriesRepository implements ICategoriesRepository {
         return CategoriesRepository.INSTANCE;
     }
 
-    create = ({ name, description }: ICreateCategoryDTO): void => {
+    create({ name, description }: ICreateCategoryDTO): void {
         
         const category = new Category();
         
@@ -30,11 +30,11 @@ class CategoriesRepository implements ICategoriesRepository {
         this.categories.push(category);
     }
 
-    list = (): Category[] => {
+    list(): Category[] {
         return this.categories;
     }
 
-    findByName = (name: string): Category => {
+    findByName(name: string): Category {
         const category = this.categories.find(category => category.name === name);
         return category;
     }

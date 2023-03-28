@@ -4,7 +4,7 @@ import { ICategoriesRepository } from "../../repositories/ICategoriesRepository"
 class ListCategoriesService {
     constructor(private categoriesRepository: ICategoriesRepository) {}
 
-    execute = (): Category[] => {
+    execute(): Category[] {
         const categories = this.categoriesRepository.list();
 
         return categories;

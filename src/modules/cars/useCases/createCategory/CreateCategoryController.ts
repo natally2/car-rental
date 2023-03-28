@@ -4,7 +4,7 @@ import { CreateCategoryService } from './CreateCategoryService';
 class CreateCategoryController {
     constructor(private createCategoryService: CreateCategoryService) {}
 
-    handle = (request: Request, response: Response): Response => {
+    handle(request: Request, response: Response): Response {
         const { name, description } = request.body;
     
         this.createCategoryService.execute({ name, description });
