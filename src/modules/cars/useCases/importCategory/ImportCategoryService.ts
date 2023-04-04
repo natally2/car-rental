@@ -33,7 +33,7 @@ class ImportCategoryService {
             .on('error', (err) => {
                 reject(err);
             });
-        });      
+        });
     }
 
     async execute(file: Express.Multer.File): Promise<void> {
