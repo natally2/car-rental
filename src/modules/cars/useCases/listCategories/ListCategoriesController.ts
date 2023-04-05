@@ -7,7 +7,7 @@ class ListCategoriesController {
     handle(request: Request, response: Response): Response {
         const all = this.listCategoriesService.execute();
 
-        return response.json(all).send();
+        return response.json(all);
     }
 }
 
